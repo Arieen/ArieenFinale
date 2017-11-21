@@ -13,92 +13,148 @@ public class PersonajeCOntrol : MonoBehaviour
     private Rigidbody2D rd2b;
     private CambiarSprite spriteActual;
 
+    //Marcos Estadísticas de vida
+    public int currhealth;
+    public int maxhealth = 3;
+
     // Use this for initialization
 
     void Start()
     {
         rd2b = gameObject.GetComponent<Rigidbody2D>();
         spriteActual = gameObject.GetComponent<CambiarSprite>();
+        
+        //Estadísticas Marcos
+        currhealth = maxhealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spriteActual.sprite == "tierra"){
+        this.Movimiento();
+        /* //if (spriteActual.sprite == "tierra"){
 
-            if (!GameObject.Find("Main Camera").gameObject.GetComponent<MenuPausa>().paused)
-            {
-                if (Input.GetKeyDown(KeyCode.Space) && grounded)
-                {
-                    rd2b.AddForce(Vector2.up * FuerzaSalto);
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    if (!isFacingRight)
-                    {
-                        isFacingRight = !isFacingRight;
-                        GetComponent<SpriteRenderer>().flipX = false;
-                    }
-                    transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        transform.position = new Vector3(personaje.position.x + speed + 0.05f, personaje.position.y, personaje.position.z);
-                    }
-                }
-                else if (Input.GetKey(KeyCode.A))
-                {
-                    if (isFacingRight)
-                    {
-                        isFacingRight = !isFacingRight;
-                        GetComponent<SpriteRenderer>().flipX = true;
-                    }
-                    transform.position = new Vector3(personaje.position.x - speed, personaje.position.y, personaje.position.z);
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        transform.position = new Vector3(personaje.position.x - speed - 0.05f, personaje.position.y, personaje.position.z);
-                    }
-                }
-            }
-        }
+           if (!GameObject.Find("Main Camera").gameObject.GetComponent<MenuPausa>().paused)
+          {
+              if (Input.GetKeyDown(KeyCode.Space) && grounded)
+              {
+                  rd2b.AddForce(Vector2.up * FuerzaSalto);
+              }
+              else if (Input.GetKey(KeyCode.D))
+              {
+                  if (!isFacingRight)
+                  {
+                      isFacingRight = !isFacingRight;
+                      GetComponent<SpriteRenderer>().flipX = false;
+                  }
+                  transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
+                  if (Input.GetKey(KeyCode.LeftShift))
+                  {
+                      transform.position = new Vector3(personaje.position.x + speed + 0.05f, personaje.position.y, personaje.position.z);
+                  }
+              }
+              else if (Input.GetKey(KeyCode.A))
+              {
+                  if (isFacingRight)
+                  {
+                      isFacingRight = !isFacingRight;
+                      GetComponent<SpriteRenderer>().flipX = true;
+                  }
+                  transform.position = new Vector3(personaje.position.x - speed, personaje.position.y, personaje.position.z);
+                  if (Input.GetKey(KeyCode.LeftShift))
+                  {
+                      transform.position = new Vector3(personaje.position.x - speed - 0.05f, personaje.position.y, personaje.position.z);
+                  }
+              }
+          }
+      //}
 
-        if (spriteActual.sprite == "aire")
+     if (spriteActual.sprite == "aire")
+      {
+
+          if (!GameObject.Find("Main Camera").gameObject.GetComponent<MenuPausa>().paused)
+          {
+              if (Input.GetKeyDown(KeyCode.Space))
+              {
+                  rd2b.AddForce(Vector2.up * FuerzaSalto);
+              }
+              else if (Input.GetKey(KeyCode.D))
+              {
+                  if (!isFacingRight)
+                  {
+                      isFacingRight = !isFacingRight;
+                      GetComponent<SpriteRenderer>().flipX = false;
+                  }
+                  transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
+                  if (Input.GetKey(KeyCode.LeftShift))
+                  {
+                      transform.position = new Vector3(personaje.position.x + speed + 0.05f, personaje.position.y, personaje.position.z);
+                  }
+              }
+              else if (Input.GetKey(KeyCode.A))
+              {
+                  if (isFacingRight)
+                  {
+                      isFacingRight = !isFacingRight;
+                      GetComponent<SpriteRenderer>().flipX = true;
+                  }
+                  transform.position = new Vector3(personaje.position.x - speed, personaje.position.y, personaje.position.z);
+                  if (Input.GetKey(KeyCode.LeftShift))
+                  {
+                      transform.position = new Vector3(personaje.position.x - speed - 0.05f, personaje.position.y, personaje.position.z);
+                  }
+              }
+          }
+      }*/
+
+
+    }
+
+    void Movimiento()
+    {
+        if (!GameObject.Find("Main Camera").gameObject.GetComponent<MenuPausa>().paused)
         {
-
-            if (!GameObject.Find("Main Camera").gameObject.GetComponent<MenuPausa>().paused)
+            if (Input.GetKeyDown(KeyCode.Space) && ((grounded && spriteActual.sprite=="tierra") || (spriteActual.sprite=="aire")))
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                rd2b.AddForce(Vector2.up * FuerzaSalto);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                if (!isFacingRight)
                 {
-                    rd2b.AddForce(Vector2.up * FuerzaSalto);
+                    isFacingRight = !isFacingRight;
+                    GetComponent<SpriteRenderer>().flipX = false;
                 }
-                else if (Input.GetKey(KeyCode.D))
+                transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
+                if (Input.GetKey(KeyCode.LeftShift))
                 {
-                    if (!isFacingRight)
-                    {
-                        isFacingRight = !isFacingRight;
-                        GetComponent<SpriteRenderer>().flipX = false;
-                    }
-                    transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        transform.position = new Vector3(personaje.position.x + speed + 0.05f, personaje.position.y, personaje.position.z);
-                    }
+                    transform.position = new Vector3(personaje.position.x + speed + 0.05f, personaje.position.y, personaje.position.z);
                 }
-                else if (Input.GetKey(KeyCode.A))
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                if (isFacingRight)
                 {
-                    if (isFacingRight)
-                    {
-                        isFacingRight = !isFacingRight;
-                        GetComponent<SpriteRenderer>().flipX = true;
-                    }
-                    transform.position = new Vector3(personaje.position.x - speed, personaje.position.y, personaje.position.z);
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        transform.position = new Vector3(personaje.position.x - speed - 0.05f, personaje.position.y, personaje.position.z);
-                    }
+                    isFacingRight = !isFacingRight;
+                    GetComponent<SpriteRenderer>().flipX = true;
+                }
+                transform.position = new Vector3(personaje.position.x - speed, personaje.position.y, personaje.position.z);
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    transform.position = new Vector3(personaje.position.x - speed - 0.05f, personaje.position.y, personaje.position.z);
                 }
             }
         }
-
-
+    }
+ 
+    void Life()
+    {
+        if (currhealth > maxhealth) { currhealth = maxhealth; }
+        if (currhealth <= 0) { /*Die(); */}
+    }
+    //Marcos función de muerte
+    void Die()
+    {
+        //Reiniciar el nivel
     }
 }

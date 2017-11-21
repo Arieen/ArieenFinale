@@ -7,12 +7,13 @@ public class CambiarSprite : MonoBehaviour {
     public Sprite aire;
     public Sprite tierra;
     public Sprite mar;
+	public string mundo = "ChangeCameraToNormal";
 
 
-	public Texture2D tierra1 = null;
+	/*public Texture2D tierra1 = null;
 	public Texture2D tierra2 = null;
 	public Texture2D aire1 = null;
-	public Texture2D aire2 = null;
+	public Texture2D aire2 = null;*/
 
     public string sprite = "tierra";
 
@@ -23,7 +24,7 @@ public class CambiarSprite : MonoBehaviour {
 
 	private void Awake()
 	{
-		thisRenderer = GetComponent<SpriteRenderer>();
+		/*thisRenderer = GetComponent<SpriteRenderer>();
 		if (thisRenderer)
 		{
 			Shader _swapShader = Shader.Find("Custom/SwapTwo");
@@ -41,16 +42,16 @@ public class CambiarSprite : MonoBehaviour {
 		else
 		{
 			Debug.LogError("There is NO spriterenderer attached to gameobject " + this.name);
-		}
+		}*/
 	}
 
     // Use this for initialization
     void Start () {
         pj = gameObject.GetComponent<PersonajeCOntrol>();
-		animator = GetComponent<Animator> ();
+		//animator = GetComponent<Animator> ();
 	}
 
-
+	/*
 	public void SwapTexture(Texture2D _toWhat)
 	{
 		//textura1 = _toWhat;
@@ -82,11 +83,11 @@ public class CambiarSprite : MonoBehaviour {
 		animator.SetBool("aire_volando2", false);
 		animator.SetBool (estado, true);
 		GetComponent<BoxCollider2D> ().size = new Vector2 (thisRenderer.sprite.bounds.size.x, thisRenderer.sprite.bounds.size.y);
-	}
+	}*/
 
 	// Update is called once per frame
 	void Update () {
-		/*if(this.gameObject.GetComponent<SpriteRenderer>().sprite != aire && Input.GetKeyDown(KeyCode.Alpha2))
+		if(this.gameObject.GetComponent<SpriteRenderer>().sprite != aire && Input.GetKeyDown(KeyCode.Alpha2))
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = aire;
 
@@ -99,7 +100,7 @@ public class CambiarSprite : MonoBehaviour {
 
         if (this.gameObject.GetComponent<SpriteRenderer>().sprite != mar && Input.GetKeyDown(KeyCode.Alpha3))
         {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = mar;
+			this.gameObject.GetComponent<SpriteRenderer>().sprite = mar;
             this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(mar.rect.width / 100, mar.rect.height / 100);
             sprite = "mar";
         }
@@ -109,14 +110,27 @@ public class CambiarSprite : MonoBehaviour {
             if (pj.grounded)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = tierra;
-                this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(tierra.rect.width / 100, tierra.rect.height / 100);
+               // this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(tierra.rect.width / 100, tierra.rect.height / 100);
                 sprite = "tierra";
                 gameObject.GetComponentsInChildren<BoxCollider2D>()[1].enabled = true;
             }
-        }*/
+        }
+
+		if (Input.GetKeyDown(KeyCode.C))
+		{
+			if (mundo == "Normal") {
+				pj.transform.position = new Vector3 (pj.transform.position.x, pj.transform.position.y + 50, pj.transform.position.z);
+				mundo = "ChangeCameraToRillion";
+			}
+			else if (mundo == "Rillion") {
+				pj.transform.position = new Vector3 (pj.transform.position.x, pj.transform.position.y - 50, pj.transform.position.z);
+				mundo = "ChangeCameraToNormal";
+			}
+
+		}
 
 		//pasamos a caminar normal
-		if (Input.GetKeyDown(KeyCode.Alpha1) && pj.grounded) {		//pasamos a caminar
+/*		if (Input.GetKeyDown(KeyCode.Alpha1) && pj.grounded) {		//pasamos a caminar
 			if (!GetComponent<ElegirMundo> ().isFantasia ()) {		//normal
 				if (animator.GetBool ("aire_volando1")) {
 					SwapTexture (tierra1);
@@ -172,6 +186,7 @@ public class CambiarSprite : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.C)) {
 			if (!GetComponent<ElegirMundo> ().isFantasia ()) {
 				if (animator.GetBool ("suelo_caminando1")) {
+					Debug.LogError ("error14");
 					SwapTexture (tierra2);
 					estadoAnimador ("suelo_caminando2");
 					transform.localPosition = new Vector3 (-50, 50, 0);
@@ -183,6 +198,7 @@ public class CambiarSprite : MonoBehaviour {
 				}
 			} else {
 				if (animator.GetBool ("suelo_caminando2")) {
+					Debug.LogError ("error14");
 					SwapTexture (tierra2);
 					estadoAnimador ("suelo_caminando1");
 					transform.localPosition = new Vector3 (-50, 0, 0);
@@ -198,5 +214,6 @@ public class CambiarSprite : MonoBehaviour {
 			GetComponent<ElegirMundo> ().isFantasia (!GetComponent<ElegirMundo> ().isFantasia ());
 		}
 
-    }
+*/    }
 }
+
