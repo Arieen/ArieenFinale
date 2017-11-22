@@ -44,11 +44,14 @@ public class MenuPausa : MonoBehaviour {
 
     public void mainMenu()
     {
-        SceneManager.LoadScene("Scene2");
+        SceneManager.LoadScene("Main_Menu");
     }
 
     public void Quit()
-    {
+	{
+		if (Application.isEditor) {
+			UnityEditor.EditorApplication.isPlaying = false;
+		}
         Application.Quit();
     }
 }

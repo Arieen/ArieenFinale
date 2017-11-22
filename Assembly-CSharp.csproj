@@ -68,7 +68,11 @@
      <Compile Include="Assets\Scripts\Arieen\PersonajeCOntrol.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\EmpezarJuego.cs" />
+     <Compile Include="Assets\Scripts\HUD\Fragmentos.cs" />
+     <Compile Include="Assets\Scripts\HUD\HUD.cs" />
+     <Compile Include="Assets\Scripts\HUD\Transf.cs" />
      <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
+     <Compile Include="Assets\Scripts\MenuInicio.cs" />
      <Compile Include="Assets\Scripts\MenuPausa.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <None Include="Assets\Main_Menu\Fonts\Jupiter\LICENSE.txt" />
