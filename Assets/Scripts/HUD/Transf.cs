@@ -18,17 +18,41 @@ public class Transf : MonoBehaviour {
 
     private void Update()
     {
-        if (personaje.sprite == "tierra"){
-            TransfUI.sprite = Tsprites[1];
+        if (personaje.mundo == "Normal")
+        {
+            if (personaje.sprite == "tierra")
+            {
+                TransfUI.sprite = Tsprites[0];
+            }
+
+            else if (personaje.sprite == "aire")
+            {
+                TransfUI.sprite = Tsprites[1];
+            }
+
+            else
+            {
+                TransfUI.sprite = Tsprites[2];
+            }
         }
 
-        else if (personaje.sprite == "aire"){
-            TransfUI.sprite = Tsprites[0];
+        else if (personaje.mundo == "Rillion")    
+        {
+            if (personaje.sprite == "tierra")
+            {
+                TransfUI.sprite = Tsprites[3];
+            }
+
+            else if (personaje.sprite == "aire")
+            {
+                TransfUI.sprite = Tsprites[4];
+            }
+
+            else
+            {
+                TransfUI.sprite = Tsprites[5];
+            }
         }
 
-        else {
-            TransfUI.sprite = Tsprites[2];
-        }
-        
     }
 }
