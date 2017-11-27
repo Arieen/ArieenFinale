@@ -113,6 +113,8 @@ public class CambiarSprite : MonoBehaviour {
                // this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(tierra.rect.width / 100, tierra.rect.height / 100);
                 sprite = "tierra";
                 gameObject.GetComponentsInChildren<BoxCollider2D>()[1].enabled = true;
+                pj.FuerzaSalto = 400f;
+                GameObject.Find("Arieen").gameObject.GetComponent<Rigidbody2D>().gravityScale = 1.5f;
             }
         }
 

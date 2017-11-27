@@ -12,6 +12,9 @@ public class PersonajeCOntrol : MonoBehaviour
     public bool grounded = true;
     private Rigidbody2D rd2b;
     private CambiarSprite spriteActual;
+    public BoxCollider2D BoundsRealWorld;
+    public BoxCollider2D BoundsFantasyWorld;
+    private float limite;
 
     //Marcos Estadísticas de vida
     public int currhealth;
@@ -114,7 +117,16 @@ public class PersonajeCOntrol : MonoBehaviour
     {
         if (!GameObject.Find("Main Camera").gameObject.GetComponent<MenuPausa>().paused)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && ((grounded && spriteActual.sprite=="tierra") || (spriteActual.sprite=="aire")))
+            if (spriteActual.mundo == "Rillion")
+            {
+                limite = (BoundsFantasyWorld.bounds.max.y - BoundsFantasyWorld.bounds.min.y)*0.7f + BoundsFantasyWorld.bounds.min.y;
+            }
+            if (spriteActual.mundo == "Normal")
+                limite = (BoundsRealWorld.bounds.max.y - BoundsRealWorld.bounds.min.y)*0.7f + BoundsRealWorld.bounds.min.y;
+
+
+
+            if (Input.GetKeyDown(KeyCode.Space) && ((grounded && spriteActual.sprite=="tierra") || (spriteActual.sprite=="aire" && personaje.position.y > limite)))
             {
                 rd2b.AddForce(Vector2.up * FuerzaSalto);
             }
@@ -122,7 +134,7 @@ public class PersonajeCOntrol : MonoBehaviour
             {
                 if (!isFacingRight)
                 {
-                    isFacingRight = !isFacingRight;
+                    isFacingRight = !isFacingRight; 
                     GetComponent<SpriteRenderer>().flipX = false;
                 }
                 transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
