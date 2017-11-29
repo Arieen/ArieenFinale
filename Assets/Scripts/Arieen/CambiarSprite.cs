@@ -120,15 +120,7 @@ public class CambiarSprite : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.C))
 		{
-			if (mundo == "Normal") {
-				pj.transform.position = new Vector3 (pj.transform.position.x, pj.transform.position.y + 50, pj.transform.position.z);
-				mundo = "ChangeCameraToRillion";
-			}
-			else if (mundo == "Rillion") {
-				pj.transform.position = new Vector3 (pj.transform.position.x, pj.transform.position.y - 50, pj.transform.position.z);
-				mundo = "ChangeCameraToNormal";
-			}
-
+			CambiarDeMundo ();
 		}
 
 		//pasamos a caminar normal
@@ -217,5 +209,14 @@ public class CambiarSprite : MonoBehaviour {
 		}
 
 */    }
+	public void CambiarDeMundo() {
+		if (mundo == "Normal") {
+			pj.transform.position = new Vector3 (pj.transform.position.x, pj.transform.position.y + 50, pj.transform.position.z);
+			mundo = "ChangeCameraToRillion";
+		} else if (mundo == "Rillion") {
+			pj.transform.position = new Vector3 (pj.transform.position.x, pj.transform.position.y - 50, pj.transform.position.z);
+			mundo = "ChangeCameraToNormal";
+		}
+	}
 }
 
