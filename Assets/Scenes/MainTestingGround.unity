@@ -786,6 +786,61 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &189929078
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -44.898926
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 47.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.08794444
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852849807124878, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 137500915745203736, guid: af4cc40e824709347a98557abd43aa78,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488939188782008, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4772918345854908, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.28
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: af4cc40e824709347a98557abd43aa78, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &205235833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,6 +3538,7 @@ GameObject:
   - component: {fileID: 1207411420}
   - component: {fileID: 1207411413}
   - component: {fileID: 1207411421}
+  - component: {fileID: 1207411422}
   m_Layer: 0
   m_Name: Arieen
   m_TagString: Player
@@ -3671,6 +3727,22 @@ MonoBehaviour:
   fragmentostotales: 10
   fragmentosrecogidos: 0
   marcador: {fileID: 1051262869}
+--- !u!114 &1207411422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1207411412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3084621815005c747b0cd51bdc121a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidas: []
+  imagenvidas: {fileID: 968049433}
+  tiempoInvulnerable: 1
+  colorTransp: {r: 1, g: 1, b: 1, a: 0.547}
+  colorNoTransp: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1211205561
 GameObject:
   m_ObjectHideFlags: 0

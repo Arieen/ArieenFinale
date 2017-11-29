@@ -1,16 +1,17 @@
-﻿<Properties StartupItem="ArieenFinale.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Arieen\PersonajeCOntrol.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HUD\Fragmentos.cs">
     <Files>
       <File FileName="Assets\Scripts\MenuInicio.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Arieen\GroundCheck.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Arieen\ElegirMundo.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Arieen\CambiarSprite.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MenuPausa.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MenuPausa.cs" Line="18" Column="37" />
       <File FileName="Assets\Scripts\QuitOnClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Arieen\PersonajeCOntrol.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Arieen\PersonajeCOntrol.cs" Line="163" Column="6" />
       <File FileName="Assets\Scripts\Portal.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MuestraTuto.cs" Line="58" Column="99" />
+      <File FileName="Assets\Scripts\MuestraTuto.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HUD\Fragmentos.cs" Line="15" Column="108" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
