@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class MuestraTuto : MonoBehaviour {
 
-	private GameObject jugador;
 	public GameObject tutoCorrespondiente;
 	public bool autoDestruible;
 	public float segundosAutodestruccion;
+
+	private GameObject jugador;
+	public bool mostrado = false;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,13 +30,18 @@ public class MuestraTuto : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		//print ("entra en el collider");
-		if (col.gameObject == jugador) {
-			tutoCorrespondiente.SetActive(true);
+		if (!mostrado) {		//como esto lo ignora lo destruiré cuando salga
+			//print ("mostrado es " + mostrado);
+			if (col.gameObject == jugador) {
+				tutoCorrespondiente.SetActive (true);
+				mostrado = true;
+				//print ("mostrado es " + mostrado);
 
-			if (autoDestruible) {
-				print ("es autodestruible");
-				StopCoroutine (QuitarDespues ());
-				StartCoroutine (QuitarDespues ());
+				if (autoDestruible) {
+					//print ("es autodestruible");
+					StopCoroutine (QuitarDespues ());
+					StartCoroutine (QuitarDespues ());
+				}
 			}
 		}
 	}
@@ -46,6 +55,7 @@ public class MuestraTuto : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D col) {
 		if (col.gameObject == jugador) {
 			tutoCorrespondiente.SetActive(false);
+			GameObject.Destroy (this.gameObject);		//lo destruyo porque ignora si se ha mostrado alguna vez
 		}
 	}
 
