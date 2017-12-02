@@ -17,6 +17,11 @@ public class HUD : MonoBehaviour {
 
     private void Update()
     {
-        LifeUI.sprite = LifeSprites[personaje.currhealth-1];
+        if (personaje.currhealth - 1 < 0)
+        {
+            LifeUI.sprite = LifeSprites[personaje.currhealth - 1];
+        }
+
+        
     }
 }
