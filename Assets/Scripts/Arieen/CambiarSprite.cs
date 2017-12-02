@@ -91,8 +91,8 @@ public class CambiarSprite : MonoBehaviour {
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = aire;
 
-			this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(aire.rect.width/100, aire.rect.height/100);
-
+            //this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(aire.rect.width/100, aire.rect.height/100);
+            
             sprite = "aire";
             pj.FuerzaSalto = 150f;
             GameObject.Find("Arieen").gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
@@ -112,6 +112,7 @@ public class CambiarSprite : MonoBehaviour {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = tierra;
                // this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(tierra.rect.width / 100, tierra.rect.height / 100);
                 sprite = "tierra";
+               
                 gameObject.GetComponentsInChildren<BoxCollider2D>()[1].enabled = true;
                 pj.FuerzaSalto = 400f;
                 GameObject.Find("Arieen").gameObject.GetComponent<Rigidbody2D>().gravityScale = 1.5f;

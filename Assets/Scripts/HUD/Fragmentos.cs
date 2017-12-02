@@ -12,6 +12,7 @@ public class Fragmentos : MonoBehaviour {
 
 	void Awake()
 	{
+        fragmentostotales = GameObject.Find("FRAGMENTOS").transform.childCount;
 		marcador.text = "" + Convert.ToString (fragmentosrecogidos) + "/" + Convert.ToString (fragmentostotales);
 	}
 
