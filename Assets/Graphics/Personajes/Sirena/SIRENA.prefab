@@ -766,9 +766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Poses:
-  - {fileID: 11400000, guid: 074f033c8a1b88d4091824940243c184, type: 2}
   - {fileID: 0}
-  - {fileID: 11400000, guid: a5de74baa5a476543964431be1923dec, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114306657143496714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1129,7 +1129,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 43537252324024214, guid: c41c3c4324d0e2c419fd868dc06cf1ad, type: 2}
+  m_Mesh: {fileID: 43537252324024214, guid: 80f56131b87987f4e8481b1e009a4784, type: 2}
   m_Bones:
   - {fileID: 4802797488131550}
   - {fileID: 4949107933427252}
