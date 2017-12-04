@@ -101,6 +101,7 @@
      <Compile Include="Assets\Scripts\MenuInicio.cs" />
      <Compile Include="Assets\Scripts\MenuPausa.cs" />
      <Compile Include="Assets\Scripts\MuestraTuto.cs" />
+     <Compile Include="Assets\Scripts\Parallax\movimientofondo.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\QuitOnClick.cs" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
