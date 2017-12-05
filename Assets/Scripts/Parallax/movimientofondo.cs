@@ -23,13 +23,13 @@ public class movimientofondo : MonoBehaviour {
         if (moverpj!=anteriorpj)
         {
             
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.A))
             {
                 
                 this.transform.Translate(Vector3.right * velocidad);
             }
 
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.D))
             {
                 
                 this.transform.Translate(Vector3.left * velocidad);
@@ -40,12 +40,12 @@ public class movimientofondo : MonoBehaviour {
 
         else 
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.A))
             {
                 this.transform.Translate(Vector3.left * velocidad);
             }
 
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(KeyCode.D))
             {
                 this.transform.Translate(Vector3.right * velocidad);
             }

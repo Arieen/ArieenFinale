@@ -138,10 +138,10 @@ public class PersonajeCOntrol : MonoBehaviour
                     GetComponent<SpriteRenderer>().flipX = false;
                 }
                 transform.position = new Vector3(personaje.position.x + speed, personaje.position.y, personaje.position.z);
-                if (Input.GetKey(KeyCode.LeftShift))
+               /* if (Input.GetKey(KeyCode.LeftShift))
                 {
                     transform.position = new Vector3(personaje.position.x + speed + 0.05f, personaje.position.y, personaje.position.z);
-                }
+                }*/
             }
             else if (Input.GetKey(KeyCode.A))
             {
@@ -151,10 +151,10 @@ public class PersonajeCOntrol : MonoBehaviour
                     GetComponent<SpriteRenderer>().flipX = true;
                 }
                 transform.position = new Vector3(personaje.position.x - speed, personaje.position.y, personaje.position.z);
-                if (Input.GetKey(KeyCode.LeftShift))
+                /*if (Input.GetKey(KeyCode.LeftShift))
                 {
                     transform.position = new Vector3(personaje.position.x - speed - 0.05f, personaje.position.y, personaje.position.z);
-                }
+                }*/
             }
         }
     }

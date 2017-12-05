@@ -29,7 +29,7 @@ public class movimientoEnemigo : MonoBehaviour {
 
 			transform.localScale = vectorContrario;
 
-			Debug.Log ("tocado");
+			//Debug.Log ("tocado");
 		}
 	}
 }
