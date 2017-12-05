@@ -76,6 +76,8 @@ public class CambiarSprite : MonoBehaviour {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = mar;
             //this.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(mar.rect.width / 100, mar.rect.height / 100);
             sprite = "mar";
+            pj.FuerzaSalto = 250f;
+            GameObject.Find("Arieen").gameObject.GetComponent<Rigidbody2D>().gravityScale = 1.5f;
         }
 
         if (this.gameObject.GetComponent<SpriteRenderer>().sprite != tierra && Input.GetKeyDown(KeyCode.Alpha1))
@@ -92,7 +94,7 @@ public class CambiarSprite : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C)&& pj.watered == false )
         {
             CambiarDeMundo();
         }
