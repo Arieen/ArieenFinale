@@ -13,9 +13,6 @@ public class CameraController : MonoBehaviour {
 
     public BoxCollider2D BoundsRealWorld;
     public BoxCollider2D BoundsFantasyWorld;
-    public BoxCollider2D BoundsWaterWorld;
-    private bool sumergido = false;
-
 
     private Vector3
     _min,
@@ -39,45 +36,24 @@ public class CameraController : MonoBehaviour {
         var x = transform.position.x;
         var y = transform.position.y;
 
-		var dimension = GameObject.Find ("Arieen").gameObject.GetComponent<CambiarSprite> ().mundo;
-        var agua = GameObject.Find("Arieen").gameObject.GetComponent<PersonajeCOntrol>().watered;
+		var dimension = GameObject.Find ("Arieen").gameObject.GetComponent<CambiarSprite> ().mundo; 
 
-        if (agua == true)
+		if (dimension == "ChangeCameraToRillion") 
         {
-            _min = BoundsWaterWorld.bounds.min;
-            _max = BoundsWaterWorld.bounds.max;
-            sumergido = true;
-        }
-        if (agua == false && sumergido == true) {
-            if (dimension == "Rillion")
-            {
-                _min = BoundsRealWorld.bounds.min;
-                _max = BoundsRealWorld.bounds.max;
-                sumergido = false;
-            }
-
-            else if (dimension == "Normal")
-            {
-                _min = BoundsFantasyWorld.bounds.min;
-                _max = BoundsFantasyWorld.bounds.max;
-                sumergido = false;
-            }
-        }
-        if (dimension == "ChangeCameraToRillion")
-        {
-            _min = BoundsRealWorld.bounds.min;
-            _max = BoundsRealWorld.bounds.max;
-            y = Mathf.Lerp(y + 50, Player.position.y, Smoothing.y * Time.deltaTime);
-            GameObject.Find("Arieen").gameObject.GetComponent<CambiarSprite>().mundo = "Rillion";
+	        _min = BoundsRealWorld.bounds.min;
+	        _max = BoundsRealWorld.bounds.max;
+			y = Mathf.Lerp(y + 50, Player.position.y, Smoothing.y * Time.deltaTime);
+			GameObject.Find ("Arieen").gameObject.GetComponent<CambiarSprite> ().mundo = "Rillion";
         }
 
-        else if (dimension == "ChangeCameraToNormal")
+		else if ( dimension == "ChangeCameraToNormal")
         {
-            _min = BoundsFantasyWorld.bounds.min;
-            _max = BoundsFantasyWorld.bounds.max;
-            y = Mathf.Lerp(y - 50, Player.position.y, Smoothing.y * Time.deltaTime);
-            GameObject.Find("Arieen").gameObject.GetComponent<CambiarSprite>().mundo = "Normal";
-        }
+	        _min = BoundsFantasyWorld.bounds.min;
+	        _max = BoundsFantasyWorld.bounds.max;
+			y = Mathf.Lerp(y - 50 , Player.position.y, Smoothing.y * Time.deltaTime);
+			GameObject.Find ("Arieen").gameObject.GetComponent<CambiarSprite> ().mundo = "Normal";
+		}
+        
 
         if (IsFollowing)
         {
