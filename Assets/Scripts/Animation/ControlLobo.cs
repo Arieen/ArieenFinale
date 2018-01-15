@@ -41,13 +41,13 @@ public class ControlLobo : MonoBehaviour {
         }
         if (pantalla)
         {
-            if (Input.GetKey(KeyCode.A) && frente)
+			if ((Input.GetKey(KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) && frente)
             {
                 frente = false;
                 this.transform.Rotate(Vector3.up, 180, Space.Self);
             }
 
-            if (Input.GetKey(KeyCode.D) && frente == false)
+			if ((Input.GetKey(KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) && frente == false)
             {
                 frente = true;
                 this.transform.Rotate(Vector3.up, 180, Space.Self);
@@ -62,7 +62,7 @@ public class ControlLobo : MonoBehaviour {
             anim.SetBool("correr", false);
             anim.SetBool("salto", false);
             repeatSalto = 0;
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+			if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.RightArrow))
             {
                 anim.SetBool("idle", false);
                 anim.SetBool("correr", true);

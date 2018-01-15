@@ -49,9 +49,9 @@ public class MenuPausa : MonoBehaviour {
 
     public void Quit()
 	{
-		if (Application.isEditor) {
+		/*if (Application.isEditor) {
 			UnityEditor.EditorApplication.isPlaying = false;
-		}
+		}*/
         Application.Quit();
     }
 }
