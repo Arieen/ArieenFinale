@@ -32,13 +32,13 @@ public class ControlFraile : MonoBehaviour {
             this.transform.Translate(Vector3.right * 8000000);
         }
 
-		if ((Input.GetKey(KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) && frente)
+        if (Input.GetKey(KeyCode.A) && frente)
         {
             frente = false;
             GetComponent<SpriteRenderer>().flipX = true;
         }
 
-		if ((Input.GetKey(KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) && frente == false)
+        if (Input.GetKey(KeyCode.D) && frente == false)
         {
             frente = true;
             GetComponent<SpriteRenderer>().flipX = false;

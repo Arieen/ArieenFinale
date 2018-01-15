@@ -10,9 +10,9 @@ public class MenuInicio : MonoBehaviour {
 	}
 
 	public void SalirDelJuego() {
-		/*if (Application.isEditor) {
+		if (Application.isEditor) {
 			UnityEditor.EditorApplication.isPlaying = false;
-		}*/
+		}
 		Application.Quit ();
 	}
 }

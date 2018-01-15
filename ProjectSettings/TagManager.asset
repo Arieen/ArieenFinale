@@ -9,7 +9,6 @@ TagManager:
   - Fragmentos
   - TopeEnemigo
   - Enemigo
-  - bordebot
   layers:
   - Default
   - TransparentFX
